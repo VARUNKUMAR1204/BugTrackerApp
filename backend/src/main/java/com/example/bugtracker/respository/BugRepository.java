@@ -21,4 +21,10 @@ public interface BugRepository extends JpaRepository<Bug,Long> {
 
     @Query("SELECT b FROM Bug b WHERE b.severity = 'HIGH' AND b.status = 'NEW' ORDER BY b.createdAt DESC")
     List<Bug> findHighPriorityNewBugs();
+
+    List<Bug> findBySeverityOrderByCreatedAtDesc(Severity severity);
+
+    List<Bug> findByStatusOrderByCreatedAtDesc(Status status);
+
+    List<Bug> findByAssigneeId(Long assigneeId);
 }

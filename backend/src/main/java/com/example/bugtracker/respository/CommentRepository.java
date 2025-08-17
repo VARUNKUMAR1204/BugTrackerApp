@@ -28,4 +28,6 @@ public interface CommentRepository extends JpaRepository<Comment,Long> {
     @Query("SELECT c FROM Comment c JOIN FETCH c.author JOIN FETCH c.bug WHERE c.bug.id = :bugId ORDER BY c.createdAt ASC")
     List<Comment> findCommentsWithDetailsForBug(@Param("bugId") Long bugId);
 
+    long countByBugId(Long bugId);
+
 }

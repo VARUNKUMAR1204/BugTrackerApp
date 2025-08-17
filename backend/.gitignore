@@ -1,6 +1,8 @@
 # Ignore TestController.java
 src/main/java/com/example/bugtracker/controller/TestController.java
 
+src/main/java/com/example/bugtracker/security/
+
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
