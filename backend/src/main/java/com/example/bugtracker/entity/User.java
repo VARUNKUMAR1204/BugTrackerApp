@@ -19,6 +19,11 @@ public class User extends BaseEntity {
     public User() {
     }
 
+    public User( String email, String name, String passwordHash) {
+        this.email = email;
+        this.name = name;
+        this.passwordHash = passwordHash;
+    }
     public User(Long id, String email, String name, String passwordHash) {
         this.id = id;
         this.email = email;

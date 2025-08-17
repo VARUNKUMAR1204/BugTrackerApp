@@ -26,7 +26,7 @@ public class Bug extends BaseEntity {
     @Column(name = "status", nullable = false)
     private Status status = Status.NEW;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "assignee_id")
     private User assignee;
 
@@ -41,6 +41,16 @@ public class Bug extends BaseEntity {
         this.status = status;
         this.assignee = assignee;
     }
+
+    public Bug( String title, String description, Severity severity, User assignee) {
+
+        this.title = title;
+        this.description = description;
+        this.severity = severity;
+        this.assignee = assignee;
+    }
+
+
 
     public Long getId() {
         return id;
