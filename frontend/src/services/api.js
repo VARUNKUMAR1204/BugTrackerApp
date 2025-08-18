@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'bugtrackerapp-production.up.railway.app'
+  ? 'bugtrackerapp-production.up.railway.app/api'
   : 'http://localhost:8080/api';
 
 const api = axios.create({
