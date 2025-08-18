@@ -119,12 +119,15 @@ Update application.properties with your MySQL credentials.
 Visit http://localhost:3000 to explore the UI. The backend runs on http://localhost:8080
 
 ## **Screenshots**
--screenshots\UI\Dashboard.png
+[Alt text](screenshots\UI\Dashboard.png?raw=true "Dash Board")
 
--screenshots\UI\CreateBug.png
+[Alt text](screenshots\UI\CreateBug.png?raw=true "Create Bug")
 
--screenshots\UI\BugDetails_Comments.png
 
--screenshots\UI\High_New.png
+[Alt text](screenshots\UI\BugDetails_Comments.png?raw=true "Bug Details")
+-
+
+[Alt text](screenshots\UI\High_New.png?raw=true "Filters")
+-
 
 Thunder Client API Tests
