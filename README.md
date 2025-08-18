@@ -63,59 +63,68 @@ A full-stack bug tracking application built with Spring Boot and React.
 
 
 ## **Database Schema** 
+Database Schema
 
--- Users table 
-CREATE TABLE users (
-    id BIGSERIAL PRIMARY KEY,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+`CREATE TABLE users (
+  id BIGSERIAL PRIMARY KEY,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);`
 
--- Bugs table  
-CREATE TABLE bugs (
-    id BIGSERIAL PRIMARY KEY,
-    title VARCHAR(200) NOT NULL,
-    description TEXT,
-    severity VARCHAR(20) NOT NULL,
-    status VARCHAR(20) NOT NULL DEFAULT 'NEW',
-    assignee_id BIGINT REFERENCES users(id),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+`CREATE TABLE bugs (
+  id BIGSERIAL PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  description TEXT,
+  severity VARCHAR(20) NOT NULL,
+  status VARCHAR(20) NOT NULL DEFAULT 'NEW',
+  assignee_id BIGINT REFERENCES users(id),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);`
 
--- Comments table
-CREATE TABLE comments (
-    id BIGSERIAL PRIMARY KEY,
-    bug_id BIGINT NOT NULL REFERENCES bugs(id),
-    author_id BIGINT NOT NULL REFERENCES users(id),
-    body TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+`CREATE TABLE comments (
+  id BIGSERIAL PRIMARY KEY,
+  bug_id BIGINT NOT NULL REFERENCES bugs(id),
+  author_id BIGINT NOT NULL REFERENCES users(id),
+  body TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);`
+
 
 ## **Running Locally**
 
 Installation
-git clone https://github.com/VARUNKUMAR1204/BugTrackerApp.git
+
+-`git clone https://github.com/VARUNKUMAR1204/BugTrackerApp.git`
 
 Backend Setup:
-cd bug-tracker/backend
-mvn clean install
-mvn spring-boot:run
+
+-`cd bug-tracker/backend`
+-`mvn clean install`
+-`mvn spring-boot:run`
 
 Frontend Setup:
-cd bug-tracker/frontend  
-npm install
-npm start
+
+-`cd bug-tracker/frontend`
+-`npm install`
+-`npm start`
 
 Database Setup:
-CREATE DATABASE bugtracker;
+-`CREATE DATABASE bugtracker;`
 Update application.properties with your MySQL credentials.
 
 Visit http://localhost:3000 to explore the UI. The backend runs on http://localhost:8080
 
-Screenshots
+## **Screenshots**
+-screenshots\UI\Dashboard.png
+
+-screenshots\UI\CreateBug.png
+
+-screenshots\UI\BugDetails_Comments.png
+
+-screenshots\UI\High_New.png
 
 Thunder Client API Tests
