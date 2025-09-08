@@ -5,7 +5,7 @@ A full-stack bug tracking application built with Spring Boot and React.
 ## **Live URLs** 
 
 - **Frontend**: https://bug-tracker-app-vert.vercel.app/
-- **Backend API**: [https://bugtrackerapp-production.up.railway.app/api](https://bugtrackerapp-production-d87d.up.railway.app/api)
+- **Backend API**: [https://bugtrackerapp-production-d87d.up.railway.app/api](https://bugtrackerapp-production-d87d.up.railway.app/api)
 
 ## **Tech Stack** 
 
